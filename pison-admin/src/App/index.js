@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import logo from '../logo.svg';
-import './index.css';
-import testJson from '../data/test.json';
+import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
+
+import routes from "./routes";
+import "./index.css";
+
+import testJson from "../data/test.json";
 
 class App extends Component {
   render() {
-
-  console.log(testJson);
+    console.log(testJson);
 
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Switch>
+          {routes.map(({ ...routeProps }) => (
+            <Route {...routeProps} key={routeProps.path || ""} />
+          ))}
+        </Switch>
       </div>
     );
   }

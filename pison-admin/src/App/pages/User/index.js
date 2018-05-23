@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-class Release extends Component {
+class User extends Component {
     constructor(props) {
         super(props);
     }
     render() {
         return (
-            <div>release 페이지 입니다.</div>
+            <div>User 페이지 입니다.</div>
         );
     }
 }
 
-export default Release;
+export default User;
