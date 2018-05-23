@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import './index.css';
+import testJson from '../data/test.json';
 
 class App extends Component {
   render() {
+
+  console.log(testJson);
+
     return (
       <div className="App">
         <header className="App-header">
