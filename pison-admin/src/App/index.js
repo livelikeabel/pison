@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 
 import routes from "./routes";
 import "./index.css";
@@ -22,4 +22,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
