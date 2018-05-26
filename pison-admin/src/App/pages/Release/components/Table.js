@@ -16,16 +16,16 @@ class Table extends Component {
         return (
           <tbody key={music.id}>
             <tr>
-              <td>
-                <input type="radio" />
+              <td className="MusicRadio">
+                <input type="radio" name="radio-group"/>
               </td>
-              <td>{music.id}</td>
+              <td className="MusicId">{music.id}</td>
               <td className="MusicTitle" onClick={() => this.props.showModal()}>{music.title}</td>
-              <td>{music.label_credit.labels[0].name}</td>
-              <td>{music.artist_credit.artists[0].artist.display_name}</td>
-              <td>{music.barcode}</td>
-              <td>{music.ingestion_status}</td>
-              <td>{music.release_date.slice(0, 10)}</td>
+              <td className="MusicLabel">{music.label_credit.labels[0].name}</td>
+              <td className="MusicArtist">{music.artist_credit.artists[0].artist.display_name}</td>
+              <td className="MusicUPC">{music.barcode}</td>
+              <td className="MusicIngestion">{music.ingestion_status}</td>
+              <td className="MusicReleaseDate">{music.release_date.slice(0, 10)}</td>
             </tr>
           </tbody>
         );
@@ -36,7 +36,7 @@ class Table extends Component {
     const musics = testJson.results;
 
     return (
-      <div>
+      <div className="Table">
         <table summary="music information table">
           {/* <colgroup>
                         <col />
@@ -47,14 +47,14 @@ class Table extends Component {
                     </colgroup> */}
           <thead>
             <tr>
-              <th>o</th>
-              <th>#</th>
-              <th>title</th>
-              <th>Label</th>
-              <th>Artist</th>
-              <th>UPC</th>
-              <th>Ingestion</th>
-              <th>Release Date</th>
+              <th className="MusicRadio"></th>
+              <th className="MusicId">#</th>
+              <th className="MusicHeadTitle">title</th>
+              <th className="MusicLabel">Label</th>
+              <th className="MusicArtist">Artist</th>
+              <th className="MusicUPC">UPC</th>
+              <th className="MusicIngestion">Ingestion</th>
+              <th className="MusicReleaseDate">Release Date</th>
             </tr>
           </thead>
           {this.renderTables(musics)}
