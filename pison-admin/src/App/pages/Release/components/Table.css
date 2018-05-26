@@ -9,3 +9,7 @@ table, th, td {
 .tableATag {
     color: #2c97ef;
 }
+
+EditModal {
+    z-index: 10;
+}

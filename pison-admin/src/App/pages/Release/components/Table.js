@@ -8,8 +8,6 @@ class Table extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
-
     this.renderTables = this.renderTables.bind(this);
   }
 
@@ -22,7 +20,7 @@ class Table extends Component {
                 <input type="radio" />
               </td>
               <td>{music.id}</td>
-              <td><a className="tableATag">{music.title}</a></td>
+              <td onClick={() => this.props.showModal()}>{music.title}</td>
               <td>{music.label_credit.labels[0].name}</td>
               <td>{music.artist_credit.artists[0].artist.display_name}</td>
               <td>{music.barcode}</td>
@@ -35,13 +33,7 @@ class Table extends Component {
   }
 
   render() {
-    //console.log(testJson.results);
     const musics = testJson.results;
-    const firstMusic = musics[0];
-    const secondMusic = musics[1];
-    const thirdMusic = musics[2];
-    const fourthMusic = musics[3];
-    console.log(musics);
 
     return (
       <div>
