@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Input from './components/Input';
+import Table from './components/Table';
 
 import './index.css';
 
@@ -13,7 +14,7 @@ class Release extends Component {
       <div className="Release">
         <div className="Template">
           <Input />
-          <div>table이야</div>
+          <Table />
         </div>
       </div>
     );
