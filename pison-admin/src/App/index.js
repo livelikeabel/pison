@@ -7,11 +7,8 @@ import './index.css';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 
-import testJson from '../data/test.json';
-
 class App extends Component {
   render() {
-    console.log(testJson);
 
     return (
       <div className="App">

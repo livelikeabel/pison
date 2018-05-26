@@ -2,12 +2,47 @@ import React, { Component } from 'react';
 
 import './Table.css';
 
+import testJson from '../../../../data/test.json';
+
 class Table extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {};
+
+    this.renderTables = this.renderTables.bind(this);
+  }
+
+  renderTables(musics) {
+    return musics.map((music) => {
+        return (
+          <tbody key={music.id}>
+            <tr>
+              <td>
+                <input type="radio" />
+              </td>
+              <td>{music.id}</td>
+              <td><a className="tableATag">{music.title}</a></td>
+              <td>{music.label_credit.labels[0].name}</td>
+              <td>{music.artist_credit.artists[0].artist.display_name}</td>
+              <td>{music.barcode}</td>
+              <td>{music.ingestion_status}</td>
+              <td>{music.release_date.slice(0, 10)}</td>
+            </tr>
+          </tbody>
+        );
+    })
   }
 
   render() {
+    //console.log(testJson.results);
+    const musics = testJson.results;
+    const firstMusic = musics[0];
+    const secondMusic = musics[1];
+    const thirdMusic = musics[2];
+    const fourthMusic = musics[3];
+    console.log(musics);
+
     return (
       <div>
         <table summary="music information table">
@@ -30,42 +65,7 @@ class Table extends Component {
               <th>Release Date</th>
             </tr>
           </thead>
-          <tbody>
-              <tr>
-                  <td><input type="radio" /></td>
-                  <td>9348</td>
-                  <td>2018 Musiceb Karaoke Vol.01</td>
-                  <td>Musicen</td>
-                  <td>Musicen</td>
-                  <td>888344150069</td>
-                  <td>SUCCEED</td>
-                  <td>2018-01-26</td>
-              </tr>
-          </tbody>
-          <tbody>
-              <tr>
-                  <td><input type="radio" /></td>
-                  <td>9334</td>
-                  <td>Silent Season</td>
-                  <td>Pison Contents</td>
-                  <td>OHYUNG</td>
-                  <td>888344150069</td>
-                  <td>SUCCEED</td>
-                  <td>2018-01-26</td>
-              </tr>
-          </tbody>
-          <tbody>
-              <tr>
-                  <td><input type="radio" /></td>
-                  <td>9333</td>
-                  <td>Crying baby soothing piano</td>
-                  <td>KOBUCO</td>
-                  <td>Calm Piano wind</td>
-                  <td>888344150069</td>
-                  <td>SUCCEED</td>
-                  <td>2018-01-19</td>
-              </tr>
-          </tbody>
+          {this.renderTables(musics)}
         </table>
       </div>
     );
