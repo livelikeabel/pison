@@ -20,7 +20,7 @@ class Table extends Component {
                 <input type="radio" />
               </td>
               <td>{music.id}</td>
-              <td onClick={() => this.props.showModal()}>{music.title}</td>
+              <td className="MusicTitle" onClick={() => this.props.showModal()}>{music.title}</td>
               <td>{music.label_credit.labels[0].name}</td>
               <td>{music.artist_credit.artists[0].artist.display_name}</td>
               <td>{music.barcode}</td>

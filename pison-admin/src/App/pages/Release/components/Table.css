@@ -6,10 +6,7 @@ table, th, td {
     border: 1px solid black;
 }
 
-.tableATag {
+.MusicTitle {
     color: #2c97ef;
-}
-
-EditModal {
-    z-index: 10;
+    cursor: pointer;
 }

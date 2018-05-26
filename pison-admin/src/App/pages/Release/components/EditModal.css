@@ -1,0 +1,98 @@
+.EditModal {
+    width: 50vw;
+    height: 63vh;
+    margin-left: 10vw;
+    margin-top: 7vw;
+    background-color: white;
+    position: fixed;
+    z-index: 100;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); /* 그림자 */ 
+}
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3vw;
+    padding: 1vw;
+    color: #2f3741;
+    border-bottom: 1px groove white;
+}
+
+.Infos {
+
+}
+
+.Info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.15vw;
+    color: #2f3741;
+    margin: 3vw;
+}
+
+.Info:last-child {
+    margin-bottom: 2vw; 
+}
+
+.Info span {
+    width: 8vw;
+    text-align: left;
+    line-height: 5vh;
+}
+
+.Info input {
+    flex: 1;
+    font-size: 1vw;
+}
+
+.FirstInfo { 
+    border: none;
+}
+
+.EditButton {
+    padding-top: 1.5vh;
+    /*padding-bottom: 0.5rem; */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 1rem;
+    background: #2c97ef;
+    border-radius: 5px;
+    color: white;
+    font-weight: 300;
+    cursor: pointer;
+    font-size: 1vw;
+}
+
+.Footer {
+    border-top: 1px solid #cdd3d8;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.RemoveButton {
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-top: 1vw;
+    border-radius: 5px;
+    color: red;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 1vw;
+}
+
+.UpdateButton {
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-right: 1vw;
+    margin-top: 1vw;
+    background: #2c97ef;
+    border-radius: 5px;
+    color: white;
+    font-weight: 300;
+    cursor: pointer;
+    font-size: 1vw;
+}
