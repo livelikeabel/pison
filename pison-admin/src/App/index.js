@@ -32,9 +32,9 @@ class App extends Component {
   }
 }
 
-export default compose(
+export default withRouter(compose(
   connect(({ meta }) => ({
     showEditModal: meta.showEditModal,
     showLicensorModal: meta.showLicensorModal,
   }))
-)(withRouter(App));
+)(App));
