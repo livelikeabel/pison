@@ -1,8 +1,16 @@
+.EditModalBackground {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 90;
+}
+
 .EditModal {
     width: 50vw;
     height: 63vh;
-    margin-left: 10vw;
-    margin-top: 7vw;
+    margin-left: 26vw;
+    margin-top: 9.25vw;
     background-color: white;
     position: fixed;
     z-index: 100;

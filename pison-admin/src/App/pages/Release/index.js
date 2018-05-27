@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'recompose';
 
 import Input from './components/Input';
 import Table from './components/Table';
@@ -18,7 +16,6 @@ class Release extends Component {
   render() {
     return (
       <div className="Release">
-        {this.props.showEditModal ? <EditModal /> : <div />}
         <div className="Template">
           <Input />
           <Table />
@@ -28,8 +25,4 @@ class Release extends Component {
   }
 }
 
-export default compose(
-  connect(({ meta }) => ({
-    showEditModal: meta.showEditModal,
-  }))
-)(Release);
+export default Release;
