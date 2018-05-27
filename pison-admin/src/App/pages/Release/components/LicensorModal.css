@@ -1,0 +1,51 @@
+.LicensorModalBackground {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 90;
+}
+
+.LicensorModal {
+    width: 40vw;
+    height: 25vh;
+    margin-left: 31vw;
+    margin-top: 19vw;
+    background-color: white;
+    position: fixed;
+    z-index: 110;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); /* 그림자 */ 
+}
+
+.Info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.15vw;
+    color: #2f3741;
+    margin: 3vw;
+}
+
+.Info span {
+    width: 8vw;
+    text-align: left;
+    line-height: 5vh;
+}
+
+.Info input {
+    flex: 1;
+    font-size: 1vw;
+}
+
+.SubmitButton {
+    padding-top: 1.5vh;
+    /*padding-bottom: 0.5rem; */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 1rem;
+    background: #50ae55;
+    border-radius: 5px;
+    color: white;
+    font-weight: 300;
+    cursor: pointer;
+    font-size: 1vw;
+}

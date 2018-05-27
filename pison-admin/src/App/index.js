@@ -9,6 +9,7 @@ import './index.css';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import EditModal from './pages/Release/components/EditModal';
+import LicensorModal from './pages/Release/components/LicensorModal';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         {this.props.showEditModal ? <EditModal /> : <div />}
+        {this.props.showLicensorModal ? <LicensorModal /> : <div />}
         <Header />
         <div className="Body">
           <Sidebar />
@@ -33,5 +35,6 @@ class App extends Component {
 export default compose(
   connect(({ meta }) => ({
     showEditModal: meta.showEditModal,
+    showLicensorModal: meta.showLicensorModal,
   }))
 )(withRouter(App));

@@ -4,7 +4,7 @@ import { compose } from 'recompose';
 
 import './EditModal.css';
 
-import { setEditModalFalse } from '../../../../redux/meta/actions';
+import { setEditModalFalse, setLicensorModalTrue } from '../../../../redux/meta/actions';
 
 class EditModal extends Component {
   constructor(props) {
@@ -17,13 +17,13 @@ class EditModal extends Component {
         <div className="EditModal">
           <div className="Header">
             <span>Edit Release</span>
-            <span>X</span>
+            <span className="Close" onClick={() => this.props.setEditModalFalse({showEditModal: false})}>X</span>
           </div>
           <div className="Infos">
             <div className="Info">
               <span>Licensor</span>{' '}
               <input value="Pison Contents" className="FirstInfo" />{' '}
-              <div className="EditButton">Edit</div>
+              <div className="EditButton" onClick={() => this.props.setLicensorModalTrue({showLicensorModal: true})}>Edit</div>
             </div>
             <div className="Info">
               <span>Title</span>{' '}
@@ -46,4 +46,12 @@ class EditModal extends Component {
   }
 }
 
-export default EditModal;
+export default compose(
+  connect(({ meta }) => ({
+    showLicensorModal: meta.showLicensorModal,
+    showEditModal: meta.showEditModal,
+  }), {
+    setEditModalFalse,
+    setLicensorModalTrue,
+  })
+)(EditModal);
