@@ -30,11 +30,11 @@ class LicensorModal extends Component {
           </div>
           <div className="Info">
             <span>Name</span>{' '}
-            <input value=" Pison Contents" />{' '}
+            <input value={this.props.licensor} />{' '}
             <div
               className="SubmitButton"
               onClick={() =>
-                alert('hi')
+                this.props.setLicensorModalFalse({ showLicensorModal: false })
               }
             >
               Submit
@@ -49,7 +49,8 @@ class LicensorModal extends Component {
 export default compose(
   connect(
     ({ meta }) => ({
-      showLicensorModal: meta.showLicensorModal
+      showLicensorModal: meta.showLicensorModal,
+      licensor: meta.licensor,
     }),
     {
       setLicensorModalFalse
