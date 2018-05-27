@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { compose } from 'recompose';
 
 import './Table.css';
 
 import testJson from '../../../../data/test.json';
+import { setEditModalTrue } from '../../../../redux/meta/actions';
 
 class Table extends Component {
   constructor(props) {
@@ -20,7 +23,7 @@ class Table extends Component {
                 <input type="radio" name="radio-group"/>
               </td>
               <td className="MusicId">{music.id}</td>
-              <td className="MusicTitle" onClick={() => this.props.showModal()}>{music.title}</td>
+              <td className="MusicTitle" onClick={() => this.props.setEditModalTrue({showEditModal: true})}>{music.title}</td>
               <td className="MusicLabel">{music.label_credit.labels[0].name}</td>
               <td className="MusicArtist">{music.artist_credit.artists[0].artist.display_name}</td>
               <td className="MusicUPC">{music.barcode}</td>
@@ -64,4 +67,10 @@ class Table extends Component {
   }
 }
 
-export default Table;
+export default compose(
+  connect(({ meta }) => ({ 
+    showEditModal: meta.showEditModal,
+   }), {
+    setEditModalTrue,
+  })
+)(Table);

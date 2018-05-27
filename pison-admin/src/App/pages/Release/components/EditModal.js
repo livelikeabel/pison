@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
 
 import './EditModal.css';
+
+import { setEditModalFalse } from '../../../../redux/meta/actions';
 
 class EditModal extends Component {
   constructor(props) {

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
 
 import Input from './components/Input';
 import Table from './components/Table';
@@ -10,32 +12,24 @@ class Release extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      showModal: false
-    };
-
-    this.showModal = this.showModal.bind(this);
-  }
-
-  showModal() {
-    console.log('hi im modal');
-    this.setState({
-      ...this.state,
-      showModal: true
-    });
+    this.state = {};
   }
 
   render() {
     return (
       <div className="Release">
-        {this.state.showModal ? <EditModal /> : <div />}
+        {this.props.showEditModal ? <EditModal /> : <div />}
         <div className="Template">
           <Input />
-          <Table showModal={this.showModal} />
+          <Table />
         </div>
       </div>
     );
   }
 }
 
-export default Release;
+export default compose(
+  connect(({ meta }) => ({
+    showEditModal: meta.showEditModal,
+  }))
+)(Release);
