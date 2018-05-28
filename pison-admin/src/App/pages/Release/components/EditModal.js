@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
 
 import './EditModal.css';
+import 'react-datepicker/dist/react-datepicker.css';
 
 import {
   setEditModalFalse,
-  setLicensorModalTrue,
+  setLicensorModalTrue
 } from '../../../../redux/meta/actions';
 
 import { updateInfos } from '../../../../redux/music/actions';
@@ -14,18 +17,36 @@ import { updateInfos } from '../../../../redux/music/actions';
 class EditModal extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      startDate: moment()
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(date) {
+    this.setState({
+      startDate: date
+    });
   }
 
   onUpdate = () => {
-    console.log('update!')
-    const { updateInfos, musics, musicId, licensor, setEditModalFalse } = this.props;
+    console.log('update!');
+    const {
+      updateInfos,
+      musics,
+      musicId,
+      licensor,
+      setEditModalFalse
+    } = this.props;
     musics.forEach(music => {
-      if(music.id === musicId) {
-        console.log('!!!!!!!!')
+      if (music.id === musicId) {
+        console.log('!!!!!!!!');
         // updateInfos(music,musics)
       }
-    })
-    setEditModalFalse({ showEditModal: false })
+    });
+    setEditModalFalse({ showEditModal: false });
   };
 
   render() {
@@ -71,7 +92,12 @@ class EditModal extends Component {
             </div>
             <div className="Info">
               <span>Release date</span>{' '}
-              <input value={this.props.releaseDate.slice(0, 10)} />
+              {/* <input value={this.props.releaseDate.slice(0, 10)} /> */}
+              <DatePicker
+                className="DatePicker"
+                selected={this.state.startDate}
+                onChange={this.handleChange}
+              />
             </div>
           </div>
           <div className="Footer">
@@ -96,7 +122,7 @@ export default compose(
       title: meta.title,
       titleLocal: meta.titleLocal,
       releaseDate: meta.releaseDate,
-      musics: music.musics,
+      musics: music.musics
     }),
     {
       setEditModalFalse,
