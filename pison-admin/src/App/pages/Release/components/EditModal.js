@@ -101,7 +101,14 @@ class EditModal extends Component {
             </div>
           </div>
           <div className="Footer">
-            <span className="RemoveButton">Remove Release</span>
+            <span
+              className="RemoveButton"
+              onClick={() =>
+                this.props.setEditModalFalse({ showEditModal: false })
+              }
+            >
+              Remove Release
+            </span>
             <span className="UpdateButton" onClick={this.onUpdate}>
               Update Release
             </span>

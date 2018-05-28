@@ -6,7 +6,7 @@ class Main extends Component {
     }
     render() {
         return (
-            <div>Main 페이지 입니다.</div>
+            <div>Main 페이지 입니다.(Release를 눌러주세요!)</div>
         );
     }
 }
