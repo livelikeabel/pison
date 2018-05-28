@@ -1,22 +1,25 @@
-import {
-    GET_MUSICS,
-} from './actions';
+import { GET_MUSICS, UPDATE_INFOS } from './actions';
 
 const initialState = {
-    musics: [],
+  musics: []
 };
 
 const music = (state = initialState, action) => {
-    console.log('여기는 리듀서',action)
-    switch (action.type) {
-        case GET_MUSICS:
-            return {
-                ...state,
-                musics: action.musics,
-            };
-        default:
-            return state;
-    }
+  switch (action.type) {
+    case GET_MUSICS:
+      return {
+        ...state,
+        musics: action.musics
+      };
+    case UPDATE_INFOS:
+      console.log('여기는 리듀서', action.music);
+      return {
+        ...state,
+        musics: [ action.musics, action.music]
+      };
+    default:
+      return state;
+  }
 };
 
 export default music;

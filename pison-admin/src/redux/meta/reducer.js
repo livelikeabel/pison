@@ -25,7 +25,6 @@ const meta = (state = initialState, action) => {
                 ...action.meta,
             };
         case CHANGE_LICENSOR_INPUT:
-            console.log(action.meta);
             return {
                 ...state,
                 licensor: action.meta,
