@@ -1,5 +1,6 @@
 .Table {
-    /* overflow: scroll; */
+    overflow: scroll;
+    height: 75vh;
 }
 
 table {
