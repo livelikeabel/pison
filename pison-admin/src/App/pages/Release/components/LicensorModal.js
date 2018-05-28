@@ -4,13 +4,19 @@ import { compose } from 'recompose';
 
 import './LicensorModal.css';
 
-import { setLicensorModalFalse } from '../../../../redux/meta/actions';
+import { setLicensorModalFalse, changeLicensorInput } from '../../../../redux/meta/actions';
 
 class LicensorModal extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+
+    };
+  }
+
+  handleChange = (e) => {
+    this.props.changeLicensorInput(e.target.value);
   }
 
   render() {
@@ -30,7 +36,7 @@ class LicensorModal extends Component {
           </div>
           <div className="Info">
             <span>Name</span>{' '}
-            <input value={this.props.licensor} />{' '}
+            <input value={this.props.licensor} onChange={this.handleChange} />{' '}
             <div
               className="SubmitButton"
               onClick={() =>
@@ -53,7 +59,8 @@ export default compose(
       licensor: meta.licensor,
     }),
     {
-      setLicensorModalFalse
+      setLicensorModalFalse,
+      changeLicensorInput,
     }
   )
 )(LicensorModal);

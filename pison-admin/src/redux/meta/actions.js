@@ -4,6 +4,7 @@ export const SET_EDIT_MODAL_TRUE = `${NAME}/SET_EDIT_MODAL_TRUE`;
 export const SET_EDIT_MODAL_FALSE = `${NAME}/SET_EDIT_MODAL_FALSE`;
 export const SET_LICENSOR_MODAL_TRUE =`${NAME}/SET_LICENSOR_MODAL_TRUE`;
 export const SET_LICENSOR_MODAL_FALSE =`${NAME}/SET_LICENSOR_MODAL_FALSE`;
+export const CHANGE_LICENSOR_INPUT = `${NAME}/CHANGE_LICENSOR_INPUT`;
 
 export function setMeta(meta) {
     return {
@@ -38,4 +39,11 @@ export function setLicensorModalFalse(meta) {
         type: SET_LICENSOR_MODAL_FALSE,
         meta,        
     };
+}
+
+export function changeLicensorInput(meta) {
+    return {
+        type: CHANGE_LICENSOR_INPUT,
+        meta,
+    }
 }

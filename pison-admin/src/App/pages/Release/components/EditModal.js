@@ -33,7 +33,7 @@ class EditModal extends Component {
           <div className="Infos">
             <div className="Info">
               <span>Licensor</span>{' '}
-              <input value={this.props.licensor} className="FirstInfo" />{' '}
+              <input value={this.props.licensor} className="FirstInfo" readOnly />{' '}
               <div
                 className="EditButton"
                 onClick={() => this.props.setLicensorModalTrue({ showLicensorModal: true })}

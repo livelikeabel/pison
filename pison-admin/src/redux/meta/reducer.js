@@ -4,6 +4,7 @@ import {
     SET_EDIT_MODAL_FALSE,
     SET_LICENSOR_MODAL_TRUE,
     SET_LICENSOR_MODAL_FALSE,
+    CHANGE_LICENSOR_INPUT,
 } from './actions';
 
 const initialState = {
@@ -23,6 +24,12 @@ const meta = (state = initialState, action) => {
                 ...state,
                 ...action.meta,
             };
+        case CHANGE_LICENSOR_INPUT:
+            console.log(action.meta);
+            return {
+                ...state,
+                licensor: action.meta,
+            }
         default:
             return state;
     }
